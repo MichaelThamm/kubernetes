@@ -1,9 +1,9 @@
 # Minikube
-* For local testing minikube included in Docker Desktop is being used to spin up a single host cluster
+* For local testing Docker Desktop is being used to spin up a single host cluster
 
 # Nomenclature
 * kubectl - Interact with cluster Api server via CLI.
-  * Used with Minikube, cloud clusters, ... widely compatible.
+  * Used with Docker Desktop, Minikube, cloud clusters, ... widely compatible.
 ## Master Node
 * Api server - Interect/manage cluster using CLI, UI, API, ...
   * Can also be a gatekeeper for authentication.
@@ -16,3 +16,6 @@
 * Kube Proxy - Forward requests from services to pods e.g. app to database will likely forward to database on same node to avoid networking overhead.
 * Container runtime - Docker, Ubuntu, ... compatible OS.
 
+# Commands
+* kubectl get nodes
+* kubectl get pods --all-namespaces
