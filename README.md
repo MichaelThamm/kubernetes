@@ -17,5 +17,7 @@
 * Container runtime - Docker, Ubuntu, ... compatible OS.
 
 # Commands
-* kubectl get nodes
-* kubectl get pods --all-namespaces
+* kubectl get nodes/deployment/pods --all-namespaces
+* kubectl create/edit/delete deployment <deployment_name>
+  * once edited, run kubectl get pods to check the high-availability
+* kubectl logs <pod_name>
