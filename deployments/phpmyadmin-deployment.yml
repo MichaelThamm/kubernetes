@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+      - name: phpmyadmin
+        image: phpmyadmin/phpmyadmin:latest
+        env:
+        - name: PMA_ARBITRARY
+          value: 1
+        ports:
+        - containerPort: 80
+        env:
+        - name: PMA_HOST
+          value: mysql  # This should match the name of your MySQL service in the Kubernetes cluster
+        - name: PMA_USER
+          value: root    # MySQL username
+        - name: PMA_PASSWORD
+          value: test1234  # MySQL password

@@ -1,5 +1,6 @@
-# Minikube
+# Docker Desktop
 * For local testing Docker Desktop is being used to spin up a single host cluster
+* [crash-course](https://www.youtube.com/watch?v=dE1o_uUXTvo)
 
 # Nomenclature
 * kubectl - Interact with cluster Api server via CLI.
@@ -21,3 +22,9 @@
 * kubectl create/edit/delete deployment <deployment_name>
   * once edited, run kubectl get pods to check the high-availability
 * kubectl logs <pod_name>
+* kubectl get services
+
+# Deployments
+## Website
+## MySQL
+[kubernetes-mysql](https://phoenixnap.com/kb/kubernetes-mysql)

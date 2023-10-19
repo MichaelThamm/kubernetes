@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website
+  namespace: default
+  labels:
+    app: website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: website
+  template:
+    metadata:
+      labels:
+        app: website
+    spec:
+      containers:
+      - name: website
+        image: michaelthamm/website:latest
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: website
+spec:
+  ports:
+  - port: 5000
+  selector:
+    app: website
+  type: LoadBalancer
