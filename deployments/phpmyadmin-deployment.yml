@@ -27,3 +27,14 @@ spec:
           value: root    # MySQL username
         - name: PMA_PASSWORD
           value: test1234  # MySQL password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: phpmyadmin
+  type: LoadBalancer
